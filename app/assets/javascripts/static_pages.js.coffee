@@ -49,7 +49,7 @@ jQuery ->
         index = 0
         comp_turn()
     else 
-      alert "You Loose"
+      alert "You Lose"
       start_game()
 
   start_game = () ->

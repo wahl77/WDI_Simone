@@ -1,3 +1,77 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$base_unit: 200px;
+@mixin active_button($color) {
+  &.active,
+  &:active {
+    background:lighten($color,30);
+  }
+}
+body {
+  background:skyblue;
+  padding:50px;
+  font-family:sans-serif;
+  font-size:20px;
+  font-weight:bold;
+}
+#simone {
+  width:2*$base_unit;
+  height:2*$base_unit;
+  position:relative;
+  background:#111;
+  border-radius:50%;
+  margin:0 auto;
+  border:0.2*$base_unit solid #111;
+  &:after {
+    content:'SIMONE';
+    color:#fff;
+    text-align:center;
+    letter-spacing:0.3em;
+    line-height:$base_unit;
+    position:absolute;
+    width:$base_unit;
+    height:$base_unit;
+    border-radius:50%;
+    background:#111;
+    top:50%;
+    left:50%;
+    margin-top:-0.5* $base_unit;
+    margin-left:-0.5*$base_unit;
+  }
+  button {
+    width:$base_unit;
+    height:$base_unit;
+    position:absolute;
+    border:0;
+    &.green {
+      background:green;
+      border-radius: $base_unit 0 0 0;
+      top:0;
+      left:0;
+      @include active_button(green);
+    }
+    &.red {
+      background:red;
+      border-radius: 0 $base_unit 0 0;
+      top:0;
+      right:0;
+      @include active_button(red);
+    }
+    &.blue {
+      background:blue;
+      border-radius: 0 0 $base_unit 0;
+      bottom:0;
+      right:0;
+      @include active_button(blue);
+    }
+    &.yellow {
+      background:gold;
+      border-radius: 0 0 0 $base_unit;
+      bottom:0;
+      left:0;
+      @include active_button(gold);
+    }
+  }
+}
+
